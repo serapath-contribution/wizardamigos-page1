@@ -6,7 +6,8 @@
   "main": "SOURCE/index.js",
   "style": "SOURCE/index.css",
   "scripts": {
-    "start": "holonify",
+    "start": "budo demo/demo.js:bundle.js --open --live",
+    "build": "browserify demo/demo.js -o bundle.js",
     "prod": "holonify --mode=production --envlocalify [ --localenvfile false ] && npm run minifyjs && npm run minifycss",
     "minifyjs": "uglifyjs BUNDLE/bundle.js -o BUNDLE/bundle.js --source-map BUNDLE/bundle.js.map -mc",
     "minifycss": "cleancss BUNDLE/bundle.css --ss0 -o BUNDLE/bundle.css #https://github.com/jakubpawlowicz/clean-css",
@@ -56,17 +57,21 @@
   "bugs": {
     "url": "https://github.com/wizardamigosinstitute/wizardamigosinstitute.github.io/issues"
   },
-  "homepage": "http://wizard.amigos.institute",
+  "homepage": "http://wizardamigos.com",
   "dependencies": {
     "eventstopper": "^1.1.0",
     "fastdom": "^0.8.6",
-    "holon-markdownbox": "^0.1.1",
+    "holon-markdownbox": "^0.3.0",
     "json-meta-marked": "^1.1.4",
+    "level-js": "^2.1.6",
+    "level-version": "^0.4.0",
+    "levelup": "^1.1.0",
     "minixhr": "^1.2.1",
     "webpage": "^0.3.0"
   },
   "devDependencies": {
     "babelify": "^6.1.1",
+    "budo": "^11.7.0",
     "clean-css": "^3.3.1",
     "envlocalify": "^1.0.0",
     "holonify": "^1.0.0",
